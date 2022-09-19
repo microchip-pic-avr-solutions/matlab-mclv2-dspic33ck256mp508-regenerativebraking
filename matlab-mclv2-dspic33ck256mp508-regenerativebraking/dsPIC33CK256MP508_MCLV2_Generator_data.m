@@ -1,8 +1,8 @@
 %% ************************************************************************
 % Model         :   PMSM Field Oriented Control
-% Description   :   Set Parameters for PMSM Field Oriented Control
-% File name     :   mcb_pmsm_foc_qep_f28069LaunchPad_data.m
-% Copyright 2020 The MathWorks, Inc.
+% Description   :   Set Parameters for Generator side Simulink model
+% File name     :   dsPIC33CK256MP508_MCLV2_Generator_data.m
+% Copyright 2022 The Microchip Technologyh, Inc.
 
 %% Simulation Parameters
 
