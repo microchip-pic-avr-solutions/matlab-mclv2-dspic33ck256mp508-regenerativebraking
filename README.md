@@ -20,60 +20,60 @@ This document describes the setup requirements for running the Regenerative Brak
     -	Stateflow
     -	MATLAB Coder
     -	Embedded Coder (v7.8)
-    -	MPLAB Device blocks for Simulink (v3.50.24)
+    -	MPLAB Device blocks for Simulink (v3.50.27)
     - Motor Control Blockset (v1.4)
 
 > **_NOTE:_**
->The software used for testing the model during release is listed above. It is recommended to use the version listed above or later versions for building the model.
+>The software used for testing the model during release is listed above. It is recommended to use the version listed above, or later versions, for building the model.
 
 ### 2.3	Hardware Tools Required for the Demonstration
-- dsPICDEM™ MCLV-2 Development Board ([DM330021-2](https://www.microchip.com/en-us/development-tool/DM330021-2)) - (Quantity 2)
-- dsPIC33CK256MP508 External Op-Amp Motor Control Plug-in module  ([MA330041-1](https://www.microchip.com/en-us/development-tool/MA330041-1)) - (Quantity 2) 
-- Benchtop power supply (compactable with 24V, 5A).
-- 24V, 3-Phase Brushless DC Permanent Magnet Hurst Motor ([AC300022](https://www.microchip.com/en-us/development-tool/AC300022)) - (Quantity 2, the motor shafts are couple together)
+
+| Hardware Tool|Part Number|Quantity|
+| :-------------:| :-----------:|:--:|
+|dsPICDEM™ MCLV-2 Development Board|[DM330021-2](https://www.microchip.com/en-us/development-tool/DM330021-2) |2 |
+|dsPIC33CK256MP508 External Op-Amp Motor Control Plug-In Module|[MA330041-1](https://www.microchip.com/en-us/development-tool/MA330041-1)|2|
+|Benchtop power supply (compatible 24V, 5A)|-|1|
+|24V 3-Phase Brushless DC Motor with Encoder|[AC300022](https://www.microchip.com/en-us/development-tool/AC300022)|2|
+|USB to RS-232 cable|-|2|
 
 > **_NOTE:_**
->All items listed under this section Hardware Tools Required for the Demonstration are available at [microchip DIRECT](https://www.microchipdirect.com/).
+><p style='text-align: justify;'>The two motors shafts are coupled together. The fixture of both motors coupled together is not sold by Microchip Technology. The fixture was created only for this demonstration purpose. Any standard motor shaft coupler can be used with 8mm diameter on both the sides.</p>
 
   
 ## 3. HARDWARE SETUP
-<p style='text-align: justify;'>This section describes hardware setup required for the demonstration.</p>
+<p style='text-align: justify;'>This section describes the hardware setup needed for the demonstration. In this demonstration two MCV-2 boards are used to control the motor and the generator. The MCLV-2 board connected to the motor is referred as ‘the motor side MCLV-2 board’ and the MCLV-2 board connected to the generator is referred as ‘the generator side MCLV-2 board’</p>
 
-1. <p style='text-align: justify;'> Disconnect power to the dsPICDEM™ MCLV-2 Development Boards and set up the following jumpers on both the boards:</p>
+1. <p style='text-align: justify;'> Disconnect power to the MCLV-2 Boards and set up the following jumpers:</p>
 
     <p align="left" >
     <img  src="images/pic1.png"></p>
 
-2. <p style='text-align: justify;'> Insert the ‘External Op Amp Configuration Matrix board’ into matrix board header J14 of both the boards. Ensure the matrix board is correctly oriented before proceeding.</p>
+2. <p style='text-align: justify;'> On both the boards, insert the ‘External Op Amp Configuration Matrix board’ into matrix board header J14. Ensure the matrix board is correctly oriented before proceeding.</p>
 
     <p align="left" >
     <img  src="images/pic2.png"></p>
 
-3. <p style='text-align: justify;'> Insert the dsPIC33CK256MP508 External Op-Amp Motor Control PIM into the PIM Socket U9 provided on the dsPICDEM™ MCLV-2 Development Boards. Make sure the PIM is correctly placed and oriented before proceeding.</p>
+3. <p style='text-align: justify;'> Insert the dsPIC33CK256MP508 External Op-Amp Motor Control PIM into the PIM Socket U9 provided on the MCLV-2 Boards. Make sure the PIM is correctly placed and oriented before proceeding.</p>
 
     <p align="left" >
     <img  src="images/pic3.jpg"></p>
 
-4. <p style='text-align: justify;'>	Connect the three phase wires from the motor to M1, M2, and M3 terminals of connector J7, provided on the motor side dsPICDEM™ MCLV-2 Development Board. Please note that for sequence of 3 phase wires and the encoder wires sequence must be as shown below.</p>
+4. <p style='text-align: justify;'>	Connect the three phase wires from the motor to M1, M2, and M3 terminals of connector J7, on ‘the motor side MCLV-2 Board’ in the sequence as shown below. </p>
 
     <p align="left" >
     <img  src="images/pic4.jpg"></p>
 
-5. <p style='text-align: justify;'>	Connect the three phase wires from the motor to M1, M2, and M3 terminals of connector J7, provided on the generator side dsPICDEM™ MCLV-2 Development Board. Please note that for sequence of 3 phase wires and the encoder wires sequence must be as shown below.</p>
+5. <p style='text-align: justify;'>	Connect the three phase wires from the generator to M1, M2, and M3 terminals of connector J7, on the ‘generator side MCLV-2 Board’. Please note that for sequence of 3 phase wires and the encoder wires sequence must be as shown below.</p>
 
     <p align="left" >
     <img  src="images/pic5.png"></p>
 
-6. <p style='text-align: justify;'>	Plug in the 24V power supply to connectors BP1 and BP2 provided on both the dsPICDEM™ MCLV-2 Development Boards (ensure that both the MCLV-2 boards are connected in parallel to the power supply).</p>
-
-7. <p style='text-align: justify;'>	The Hurst 300 motors shafts should be coupled together, so that one will work as a motor and other will work as a generator.</p>
-
-8. <p style='text-align: justify;'>	The final picture of the setup is shown below</p>
+6. <p style='text-align: justify;'>	Set 24V on the benchtop power supply and connect it to the connectors BP1 and BP2 provided on both the MCLV-2 Boards (The single power supply is used for both the MCLV-2 boards). Couple the motors shafts using a coupler and connected to MCLV-2 boards. Make sure the setup is as shown below.</p>
 
     <p align="left" >
     <img  src="images/pic6.png"></p>
 
-9. <p style='text-align: justify;'>	Connect the Microchip MPLAB PICkit 4 In-Circuit Debugger to the Connector J12 of the dsPICDEM™ MCLV-2 Development Board as shown below and to the Host PC used for programming the device. Ensure the arrows indicated on the board and  PICkit 4 orient as shown in the picture. </p>
+7. <p style='text-align: justify;'>	The Microchip MPLAB PICkit 4 In-Circuit Debugger needs to connected to the Connector J12 of the MCLV-2 Board, as shown below. Also connect to the Host PC used for programming the device.. Ensure the arrows indicated on the board and  PICkit 4 orient as shown in the picture. </p>
 
     <p align="left" >
     <img  src="images/pic7.png"></p>
@@ -95,7 +95,16 @@ This document describes the setup requirements for running the Regenerative Brak
     <p align="left" >
     <img  src="images/dem1.png"></p>
 
-3.	<p style='text-align: justify;'> Connect the PICkit 4 In-Circuit Debugger to the Connector J12 of motor side MCLV-2 Development Board. </p>
+    In this folder there will be five files used for the demonstration, 
+    |File Name|Description|
+    | :-------------:| :-----------:|
+    |dsPIC33CK256MP508_MCLV2_Generator_data.m|Data file for generator side Simulink model|
+    |dsPIC33CK256MP508_MCLV2_QEI_Generator.slx|Simulink model for ‘the generator side MCLV-2 board’ using optical encoder|
+    |dsPIC33CK256MP508_MCLV2_SMO_data.m|Data file for motor side Simulink model|
+    |dsPIC33CK256MP508_MCLV2_SMO_Motor.slx|Simulink model for ‘the motor side MCLV-2 board’ using Sliding motor observer|
+    |mcb_host_common.slx|Simulink model to monitor real time parameters from the hardware|
+
+3.	Connect the PICkit 4 In-Circuit Debugger to the Connector J12 of ‘motor side MCLV-2 Board’, as mentioned in the step 7 of the ["3.3 Hardware Setup"](#3-hardware-setup) section and turn on the power supply.
 
 4.	<p style='text-align: justify;'> Double click and open the <b>dsPIC33CK256MP508_MCLV2_SMO_data.m</b> file. This file contains the configuration parameter for the motor and board. By default, the file is configured to run Hurst 300 motor and MCLV-2 board. Run the file by clicking the <b>“Run”</b> icon and wait till all variables get loaded on the <b>‘Workspace’</b> tab.</p>
 
