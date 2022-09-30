@@ -1,8 +1,8 @@
 %% ************************************************************************
 % Model         :   PMSM Field Oriented Control
 % Description   :   Set Parameters for PMSM Field Oriented Control
-% File name     :   mcb_pmsm_foc_sensorless_dsPIC33_data.m
-% Copyright 2020 The MathWorks, Inc.
+% File name     :   dsPIC33CK256MP508_MCLV2_SMO_data.m
+% Copyright 2022 The Microchip Technologyh, Inc.
 
 %% Simulation Parameters
 
